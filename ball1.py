@@ -11,7 +11,7 @@ screen = pygame.display.set_mode((width, height))
 screen.fill((53, 53, 88), (0, 0, width, height))
 pygame.draw.circle(screen, (255,0,0), (width/2, height/2), width/2, 5)
 mixer.init()
-sound = mixer.Sound("boing-101318.mp3")
+sound = mixer.Sound("7384469389199952682.mp3")
 
 class Ball:
     def __init__(self):
@@ -65,7 +65,7 @@ while True:
             exit(0)
 
     ball.update()
-    pygame.draw.circle(screen, (255, 0, 0), (width / 2, height / 2), width / 2, 5)
+    pygame.draw.circle(screen, (255, 255, 255), (width / 2, height / 2), width / 2, 5)
 
     color.hsla = (h, s, l, 1)
     h += 1 * colorDir
