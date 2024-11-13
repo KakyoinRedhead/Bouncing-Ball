@@ -3,15 +3,18 @@ import math
 import pygame as pygame
 from pygame import Vector2, Color, mixer
 
-width = 1080
-height = 1920
-
+width = 1000
+height = 1000
+circle_radius = width / 3
+circle_width = 5
+circle_neon = 10
 clock = pygame.time.Clock()
 screen = pygame.display.set_mode((width, height))
-screen.fill((53, 53, 88), (0, 0, width, height))
-pygame.draw.circle(screen, (255,0,0), (width/2, height/2), width/2, 5)
+screen.fill((0, 0, 0), (0, 0, width, height))
+pygame.draw.circle(screen, (255,255,255), (width/2, height/2), circle_radius, circle_width)
+
 mixer.init()
-sound = mixer.Sound("7384469389199952682.mp3")
+sound = mixer.Sound("7296545774274448133.mp3")
 
 class Ball:
     def __init__(self):
@@ -41,7 +44,7 @@ class Ball:
             self.velocity = Vector2(-v * math.cos(newAngle),v * math.sin(newAngle))
 
     def isCollide(self):
-        if self.distance(self.position.x,self.position.y,width/2,height/2) > width/2 - self.radius:
+        if self.distance(self.position.x,self.position.y,width/2,height/2) > circle_radius - self.radius -8:
             return True
         return False
 
@@ -65,7 +68,7 @@ while True:
             exit(0)
 
     ball.update()
-    pygame.draw.circle(screen, (255, 255, 255), (width / 2, height / 2), width / 2, 5)
+    pygame.draw.circle(screen, (242,242,242), (width/2, height/2), circle_radius, circle_neon)
 
     color.hsla = (h, s, l, 1)
     h += 1 * colorDir
