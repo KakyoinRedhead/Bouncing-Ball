@@ -14,7 +14,7 @@ screen.fill((0, 0, 0), (0, 0, width, height))
 pygame.draw.circle(screen, (255,255,255), (width/2, height/2), circle_radius, circle_width)
 
 mixer.init()
-sound = mixer.Sound("7296545774274448133.mp3")
+sound = mixer.Sound("funny-spring-jump-140378.mp3")
 
 class Ball:
     def __init__(self):
